@@ -4,9 +4,6 @@
 </br></h3> 
 
 
-
-
-
 ## Getting Started:
 
 Before we start ensure you have one of the supported devices:
@@ -24,14 +21,17 @@ Before we start ensure you have one of the supported devices:
 4. Enjoy!
 
 ## Information:
+Jailbreak website: [https://socket-jb.app](https://socket-jb.app)<br>
+Socket Repo: [https://socket-jb.app/repo](https://socket-jb.app/repo)
+
 By default this jailbreak does NOT install Cydia, instead it uses [Zebra](https://github.com/zbrateam/Zebra), specifically my [fork](https://github.com/staturnzz/Zebra)
 
-Also note that this jailbreak does NOT destory sandbox containers, you may have to resign some apps using the socket_resign command in a terminal or using 
+Also note that this jailbreak does NOT destory sandbox containers, you may have to resign some apps using the container-resign package, which can be found in the base Socket Repo in Zebra (you need to install this to use it). Then you can run the command as show below using a terminal or ssh.
 SSH
 ```bash
-socket_resign <path-to-binary>
+container-resign <path-to-binary>
 
-socket_resign /Applications/Coolbooter.app/Coolbooter
+container-resign /Applications/Coolbooter.app/Coolbooter
 ```
 As with all jailbreaks, there is NO WARRANTY with this software, so use at your own risk. 
 
@@ -60,7 +60,7 @@ If you have an issue please report it via this repo's issues tab.
 <b align="left">REALKJCMEMBER <a href="https://twitter.com/REALKJCMEMBER"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="http://wall.supplies"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>bits for kernel pmap patching</sub></div>
   ⠀
 <div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13827992?v=4&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
-<b align="left">SongXiaoXi <a href=""><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/SongXiaoXi"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>sock_port 32bit support & fixes</sub></div>
+<b align="left">SongXiaoXi <a href="https://github.com/SongXiaoXi"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/SongXiaoXi"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>sock_port 32bit support & fixes</sub></div>
   ⠀
 <div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/3287607055/85f6414b1b35d431296a3dd243f4a903_400x400.png&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
 <b align="left">tihmstar <a href="https://twitter.com/tihmstar"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/tihmstar"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>bits from doubleh3lix</sub></div>
