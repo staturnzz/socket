@@ -1,4 +1,4 @@
-<img align="left" width="100" height="100" src="icon.png" alt="palera1n logo" style="float: left;"/>
+<img align="left" width="100" height="100" src="icon.png" alt="logo" style="float: left;"/>
 
 <h3 align="left" >Welcome to Socket, <br>iOS 10.3.x Jailbreak for 32bit devices<div align="right" style="float: top;"><b><a href="https://twitter.com/0x7FF7"><img height="18px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"></a><a href="https://github.com/staturnzz"> <img height="18px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"></div>
 </br></h3> 
