@@ -129,8 +129,8 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Welcome"
-                                              message:@"It seems this is your first time using socket.\
-                                              Please note this this is current in beta, there may be issues.\
+                                              message:@"It seems this is your first time using Socket.\
+                                              Please note this this is currently in beta, so there may be issues.\
                                               If you need help or want to report an issue, feel free to message me\
                                               on twitter @0x7FF7 or github @staturnzz. Enjoy!"
                                               preferredStyle:UIAlertControllerStyleAlert];
