@@ -26,7 +26,7 @@ Socket Repo: [https://socket-jb.app/repo](https://socket-jb.app/repo)
 
 By default this jailbreak does NOT install Cydia, instead it uses [Zebra](https://github.com/zbrateam/Zebra), specifically my [fork](https://github.com/staturnzz/Zebra)
 
-Also note that this jailbreak does NOT destory sandbox containers, you may have to resign some apps using the container-resign package, which can be found in the base Socket Repo in Zebra (you need to install this to use it). Then you can run the command as show below using a terminal or ssh.
+Also note that this jailbreak does NOT destroy sandbox containers, you may have to resign some apps using the container-resign package, which can be found in the base Socket Repo in Zebra (you need to install this to use it). Then you can run the command as show below using a terminal or ssh.
 SSH
 ```bash
 container-resign <path-to-binary>
