@@ -30,9 +30,7 @@
 #define filter(a) filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@a]
 #define concat(a,b) [NSString stringWithFormat:a, b]
 
-extern int (*dsystem)(const char *);
 extern char* const* environ;
-bool run_uicache = false;
 mach_port_t tfp0_port;
 uint32_t k_base;
 uint32_t kernel_slide;
@@ -99,7 +97,6 @@ void install_zebra(void) {
 }
 
 void install_bootstrap(void) {
-    run_uicache = true;
     status(@"[*] moving files\n");
     copyfile(bundle("tar").path.UTF8String, "/bin/tar", NULL, COPYFILE_ALL);
     copyfile(bundle("launchctl").path.UTF8String, "/bin/launchctl", NULL, COPYFILE_ALL);
@@ -130,6 +127,10 @@ void install_bootstrap(void) {
     
     status(@"[*] installing zebra\n");
     install_zebra();
+    
+    status(@"[*] running uicache\n");
+    p_spawn(@"/usr/bin/uicache", @[]);
+
 }
 
 
@@ -326,7 +327,6 @@ int start_jailbreak(void) {
         
         status(@"[*] loading daemons\n");
         if ([tweaks isEqual:@"yes"]) load_daemons();
-        if (run_uicache) status(@"[*] running uicache\n"); p_spawn(@"/usr/bin/uicache", @[]);
         
         cleanup();
         status(@"[*] all done!\n\n");

@@ -7,11 +7,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#include <dlfcn.h>
-int (*dsystem)(const char *) = 0;
 
 int main(int argc, char * argv[]) {
-    dsystem = dlsym(RTLD_DEFAULT,"system");
     NSString * appDelegateClassName;
     @autoreleasepool {
         appDelegateClassName = NSStringFromClass([AppDelegate class]);

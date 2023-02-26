@@ -5,6 +5,8 @@
 //  Created by staturnz on 1/24/23.
 //
 
+// cog icons by Icons8 https://icons8.com/icons/ios-glyphs
+
 #import <Foundation/Foundation.h>
 #import "Settings.h"
 #include <pthread.h>

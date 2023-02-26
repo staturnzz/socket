@@ -30,6 +30,7 @@
     
 #pragma mark - [*]--   Theme Stuff   --[*]
     
+    
     NSString *theme = [[NSUserDefaults standardUserDefaults] stringForKey:@"theme"];
     if ([theme isEqual:@"aurora"]) {
         [[UIView appearance] setTintColor:UIColorFromRGB(0x92B4A7)];
@@ -73,7 +74,7 @@
     NSString *str = [NSString stringWithFormat: @"%@%@",  self.log.text, noti.userInfo[@"msg"][0]];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.log.text = str;
-        NSRange lastLine = NSMakeRange(self.log.text.length - 1, 1);
+        NSRange lastLine = NSMakeRange(self.log.text.length - 2, 1);
         [self.log scrollRangeToVisible:lastLine];
     });
 }
@@ -130,7 +131,7 @@
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Welcome"
                                               message:@"It seems this is your first time using Socket.\
-                                              Please note this this is currently in beta, so there may be issues.\
+                                              Please note that this is currently in beta, so there may be issues.\
                                               If you need help or want to report an issue, feel free to message me\
                                               on twitter @0x7FF7 or github @staturnzz. Enjoy!"
                                               preferredStyle:UIAlertControllerStyleAlert];

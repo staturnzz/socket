@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "Credits.h"
 
+// news icons by Icons8 https://icons8.com/icons/ios-glyphs
+
 @interface Credits ()
 @end
 

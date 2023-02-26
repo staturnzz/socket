@@ -58,7 +58,7 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="icons8-engineering-30()">
+                                <state key="normal" image="cog">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="14" scale="small"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -90,7 +90,7 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="icons8-newspaper-30">
+                                <state key="normal" image="news">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15" scale="default"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -568,7 +568,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Timhstar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="txS-9U-G1j">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Timhstar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="txS-9U-G1j">
                                                     <rect key="frame" x="16" y="0.0" width="154" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="tintColor" systemColor="tintColor"/>
@@ -588,7 +588,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Zebra Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x6r-qg-th0">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Zebra Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x6r-qg-th0">
                                                     <rect key="frame" x="16" y="0.0" width="154" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="tintColor" systemColor="tintColor"/>
@@ -1336,9 +1336,9 @@ Public License instead of this License.  But first, please read
     </scenes>
     <color key="tintColor" systemColor="systemRedColor"/>
     <resources>
+        <image name="cog" width="30" height="30"/>
         <image name="geometric" width="1000" height="2000"/>
-        <image name="icons8-engineering-30()" width="30" height="30"/>
-        <image name="icons8-newspaper-30" width="30" height="30"/>
+        <image name="news" width="30" height="30"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
