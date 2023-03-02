@@ -114,23 +114,23 @@ NSString *set_theme = @"";
 
 - (IBAction)theme_swap:(id)sender {
 
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Title" message:@"Alert Message" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *theme1 = [UIAlertAction actionWithTitle:@"aurora" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Themes" message:@"Please select a theme to use." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *aurora = [UIAlertAction actionWithTitle:@"aurora" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         set_theme = @"aurora";
         [[NSUserDefaults standardUserDefaults] setObject:set_theme forKey:@"theme"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }];
-    UIAlertAction *theme2 = [UIAlertAction actionWithTitle:@"ocean" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    UIAlertAction *ocean = [UIAlertAction actionWithTitle:@"ocean" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         set_theme = @"ocean";
         [[NSUserDefaults standardUserDefaults] setObject:set_theme forKey:@"theme"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }];
-    UIAlertAction *theme3 = [UIAlertAction actionWithTitle:@"geometric" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    UIAlertAction *geometric = [UIAlertAction actionWithTitle:@"geometric" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         set_theme = @"geometric";
         [[NSUserDefaults standardUserDefaults] setObject:set_theme forKey:@"theme"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }];
-    UIAlertAction *theme4 = [UIAlertAction actionWithTitle:@"pink" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    UIAlertAction *pink = [UIAlertAction actionWithTitle:@"pink" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         set_theme = @"pink";
         [[NSUserDefaults standardUserDefaults] setObject:set_theme forKey:@"theme"];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -138,10 +138,10 @@ NSString *set_theme = @"";
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
     }];
     
-    [alert addAction:theme1];
-    [alert addAction:theme2];
-    [alert addAction:theme3];
-    [alert addAction:theme4];
+    [alert addAction:aurora];
+    [alert addAction:ocean];
+    [alert addAction:geometric];
+    [alert addAction:pink];
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 }
