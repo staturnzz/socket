@@ -64,6 +64,21 @@
 
 #pragma mark - [*]--   Basic Stuff   --[*]
 
+- (void)checkForUpdate {
+    NSString *str = @"https://socket-jb.app/latest";
+    NSURL  *url = [NSURL URLWithString:str];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSString* dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *trimStr = [dataStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString* version = [infoDict objectForKey:@"CFBundleVersion"];
+
+    if (![version isEqual:trimStr]) {
+        status(concat(@"[*] a new update is available for version: %@, you can download the update at socket-jb.app or from jailbreaks.app (on device)\n", trimStr));
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.title_label.textColor = UIColorFromRGB(0xF7EBE8);
@@ -94,6 +109,7 @@
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
     NSString* version = [infoDict objectForKey:@"CFBundleVersion"];
     status(concat(@"[*] made by staturnz @0x7FF7\n[*] version: %@\n", version));
+    [self checkForUpdate];
     
 
 #pragma mark - [*]--   Label & Button UI Stuff   --[*]
