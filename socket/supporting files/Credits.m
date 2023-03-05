@@ -50,6 +50,20 @@
         [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0xB3679B)];
         [self.navigationController.navigationBar setTitleTextAttributes:
            @{NSForegroundColorAttributeName:UIColorFromRGB(0xB3679B)}];
+    } else if ([theme isEqual:@"bands"]) {
+        [[UIView appearance] setTintColor:UIColorFromRGB(0x82A7A6)];
+        [[UILabel appearance] setTextColor:UIColorFromRGB(0x82A7A6)];
+        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x82A7A6)];
+        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x82A7A6)];
+        [self.navigationController.navigationBar setTitleTextAttributes:
+           @{NSForegroundColorAttributeName:UIColorFromRGB(0x82A7A6)}];
+    } else if ([theme isEqual:@"twist"]) {
+        [[UIView appearance] setTintColor:UIColorFromRGB(0x67597A)];
+        [[UILabel appearance] setTextColor:UIColorFromRGB(0x67597A)];
+        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x67597A)];
+        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x67597A)];
+        [self.navigationController.navigationBar setTitleTextAttributes:
+           @{NSForegroundColorAttributeName:UIColorFromRGB(0x67597A)}];
     }
 }
 

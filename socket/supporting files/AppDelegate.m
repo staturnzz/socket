@@ -17,12 +17,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSString *theme = [[NSUserDefaults standardUserDefaults] stringForKey:@"theme"];
-    NSArray *valid_themes = [NSArray arrayWithObjects:@"aurora",@"ocean",@"geometric",@"pink", nil];
+    NSString *random = [[NSUserDefaults standardUserDefaults] stringForKey:@"random"];
+
+    NSArray *valid_themes = [NSArray arrayWithObjects:@"aurora",@"ocean",@"geometric",@"pink",@"bands",@"twist", nil];
     [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"tweaks"];
     [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"restrap"];
     [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"zebra"];
     if (![valid_themes containsObject: theme] || [theme isEqual:nil]) {
-        [[NSUserDefaults standardUserDefaults] setObject: @"geometric" forKey:@"theme"];
+        [[NSUserDefaults standardUserDefaults] setObject: @"bands" forKey:@"theme"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    if (random) {
+        NSUInteger rand = arc4random_uniform(5) + 1;
+        [[NSUserDefaults standardUserDefaults] setObject: valid_themes[rand] forKey:@"theme"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     return YES;

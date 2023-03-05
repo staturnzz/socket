@@ -15,6 +15,7 @@
 
 
 @interface Settings ()
+@property (weak, nonatomic) IBOutlet UISwitch *random_theme_out;
 @property (weak, nonatomic) IBOutlet UISwitch *load_tweaks_out;
 @property (weak, nonatomic) IBOutlet UISwitch *reinstall_bootstrap_out;
 @end
@@ -38,6 +39,16 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"restrap"];
     } else {
         [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"restrap"];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
+- (IBAction)random_theme:(id)sender {
+    if (_random_theme_out.on) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"random"];
+    } else {
+        [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"random"];
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -101,10 +112,26 @@ NSString *set_theme = @"";
         [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0xB3679B)];
         [self.navigationController.navigationBar setTitleTextAttributes:
            @{NSForegroundColorAttributeName:UIColorFromRGB(0xB3679B)}];
+    } else if ([theme isEqual:@"bands"]) {
+        [[UIView appearance] setTintColor:UIColorFromRGB(0x82A7A6)];
+        [[UILabel appearance] setTextColor:UIColorFromRGB(0x82A7A6)];
+        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x82A7A6)];
+        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x82A7A6)];
+        [self.navigationController.navigationBar setTitleTextAttributes:
+           @{NSForegroundColorAttributeName:UIColorFromRGB(0x82A7A6)}];
+    } else if ([theme isEqual:@"twist"]) {
+        [[UIView appearance] setTintColor:UIColorFromRGB(0x67597A)];
+        [[UILabel appearance] setTextColor:UIColorFromRGB(0x67597A)];
+        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x67597A)];
+        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x67597A)];
+        [self.navigationController.navigationBar setTitleTextAttributes:
+           @{NSForegroundColorAttributeName:UIColorFromRGB(0x67597A)}];
     }
     
+    NSString *random = [[NSUserDefaults standardUserDefaults] stringForKey:@"random"];
     NSString *tweaks = [[NSUserDefaults standardUserDefaults] stringForKey:@"tweaks"];
     NSString *restrap = [[NSUserDefaults standardUserDefaults] stringForKey:@"restrap"];
+    if ([random isEqual:@"yes"]) [_random_theme_out setOn:YES animated:YES];
     if ([tweaks isEqual:@"yes"]) [_load_tweaks_out setOn:YES animated:YES];
     if ([restrap isEqual:@"yes"]) [_reinstall_bootstrap_out setOn:YES animated:YES];
 }
@@ -135,6 +162,16 @@ NSString *set_theme = @"";
         [[NSUserDefaults standardUserDefaults] setObject:set_theme forKey:@"theme"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }];
+    UIAlertAction *bands = [UIAlertAction actionWithTitle:@"bands" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        set_theme = @"bands";
+        [[NSUserDefaults standardUserDefaults] setObject:set_theme forKey:@"theme"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }];
+    UIAlertAction *twist = [UIAlertAction actionWithTitle:@"twist" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        set_theme = @"twist";
+        [[NSUserDefaults standardUserDefaults] setObject:set_theme forKey:@"theme"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
     }];
     
@@ -142,6 +179,8 @@ NSString *set_theme = @"";
     [alert addAction:ocean];
     [alert addAction:geometric];
     [alert addAction:pink];
+    [alert addAction:bands];
+    [alert addAction:twist];
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 }

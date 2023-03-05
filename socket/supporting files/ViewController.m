@@ -52,6 +52,16 @@
         self.log.layer.borderColor = [UIColorFromRGB(0xB3679B) CGColor];
         self.backgroud.image = [UIImage imageNamed:@"pink"];
         self.log.textColor = UIColorFromRGB(0xFAFAFF);
+    } else if ([theme isEqual:@"bands"]) {
+        [[UIView appearance] setTintColor:UIColorFromRGB(0x82A7A6)];
+        self.log.layer.borderColor = [UIColorFromRGB(0x82A7A6) CGColor];
+        self.backgroud.image = [UIImage imageNamed:@"bands"];
+        self.log.textColor = UIColorFromRGB(0x273469);
+    } else if ([theme isEqual:@"twist"]) {
+        [[UIView appearance] setTintColor:UIColorFromRGB(0x67597A)];
+        self.log.layer.borderColor = [UIColorFromRGB(0x67597A) CGColor];
+        self.backgroud.image = [UIImage imageNamed:@"twist"];
+        self.log.textColor = UIColorFromRGB(0x273469);
     }
     
     self.title_label.textColor = UIColorFromRGB(0xF7EBE8);
@@ -62,7 +72,8 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
-#pragma mark - [*]--   Basic Stuff   --[*]
+
+#pragma mark - [*]--   Update Checker   --[*]
 
 - (void)checkForUpdate {
     NSString *str = @"https://socket-jb.app/latest";
@@ -78,6 +89,9 @@
         status(concat(@"[*] a new update is available for version: %@, you can download the update at socket-jb.app or from jailbreaks.app (on device)\n", trimStr));
     }
 }
+
+
+#pragma mark - [*]--   Basic Stuff   --[*]
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -136,26 +150,6 @@
     
     self.log.layer.borderWidth = 2.0;
     self.log.layer.cornerRadius = 8;
-    
-    
-#pragma mark - [*]--   First Use Alert   --[*]
-
-    NSString *first_use = [[NSUserDefaults standardUserDefaults] stringForKey:@"first_use"];
-    if (![first_use isEqual:@"yes"]) {
-        [[NSUserDefaults standardUserDefaults] setObject: @"yes" forKey:@"first_use"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Welcome"
-                                              message:@"It seems this is your first time using Socket.\
-                                              Please note that this is currently in beta, so there may be issues.\
-                                              If you need help or want to report an issue, feel free to message me\
-                                              on twitter @0x7FF7 or github @staturnzz. Enjoy!"
-                                              preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *okayAction = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
-        [alertController addAction:okayAction];
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
 }
 
 
