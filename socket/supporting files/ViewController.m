@@ -32,6 +32,7 @@
     
     
     NSString *theme = [[NSUserDefaults standardUserDefaults] stringForKey:@"theme"];
+
     if ([theme isEqual:@"aurora"]) {
         [[UIView appearance] setTintColor:UIColorFromRGB(0x92B4A7)];
         self.log.layer.borderColor = [UIColorFromRGB(0x92B4A7) CGColor];
@@ -70,23 +71,14 @@
     self.settings.backgroundColor = UIColorFromRGB(0xF7EBE8);
     self.button.titleLabel.textColor = UIColorFromRGB(0x1E1E24);
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
-
-#pragma mark - [*]--   Update Checker   --[*]
-
-- (void)checkForUpdate {
-    NSString *str = @"https://socket-jb.app/latest";
-    NSURL  *url = [NSURL URLWithString:str];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    NSString* dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSString *trimStr = [dataStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
-    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString* version = [infoDict objectForKey:@"CFBundleVersion"];
-
-    if (![version isEqual:trimStr]) {
-        status(concat(@"[*] a new update is available for version: %@, you can download the update at socket-jb.app or from jailbreaks.app (on device)\n", trimStr));
+    NSString *darkmode = [[NSUserDefaults standardUserDefaults] stringForKey:@"darkmode"];
+    if ([darkmode isEqual:@"yes"]) {
+        [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x1C1C1E)];
+        self.navigationController.navigationBar.translucent = NO;
+        [[UINavigationBar appearance] setTranslucent:NO];
+        self.backgroud.alpha = 0.7;
+    }  else {
+        self.backgroud.alpha = 1.0;
     }
 }
 
@@ -108,10 +100,23 @@
     });
 }
 
+
+#pragma mark - [*]--   View Stuff   --[*]
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.log.backgroundColor = [UIColor clearColor];
-
+    
+    NSString *darkmode = [[NSUserDefaults standardUserDefaults] stringForKey:@"darkmode"];
+    if ([darkmode isEqual:@"yes"]) {
+        [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x1C1C1E)];
+        self.navigationController.navigationBar.translucent = NO;
+        [[UINavigationBar appearance] setTranslucent:NO];
+        self.backgroud.alpha = 0.7;
+    }  else {
+        self.backgroud.alpha = 1.0;
+    }
+    
     [nc addObserver:self selector:@selector(logText:) name:@"status" object:nil];
     self.log.text = @"[*] socket jailbreak ios 10 (32bit)\n";
 
@@ -123,7 +128,6 @@
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
     NSString* version = [infoDict objectForKey:@"CFBundleVersion"];
     status(concat(@"[*] made by staturnz @0x7FF7\n[*] version: %@\n", version));
-    [self checkForUpdate];
     
 
 #pragma mark - [*]--   Label & Button UI Stuff   --[*]
@@ -167,6 +171,8 @@
             self.button.enabled = true;
             if (ret != 0) [self.button setTitle:@"retry" forState:normal];
             else [self.button setTitle:@"respring" forState:normal];
+            NSString *autorespring = [[NSUserDefaults standardUserDefaults] stringForKey:@"autorespring"];
+            if ([autorespring isEqual:@"yes"]) p_spawn(@"/usr/bin/killall", @[@"backboardd"]);
         });
     });
     }

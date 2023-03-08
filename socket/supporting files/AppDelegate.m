@@ -27,7 +27,7 @@
         [[NSUserDefaults standardUserDefaults] setObject: @"bands" forKey:@"theme"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    if (random) {
+    if ([random isEqual:@"yes"]) {
         NSUInteger rand = arc4random_uniform(5) + 1;
         [[NSUserDefaults standardUserDefaults] setObject: valid_themes[rand] forKey:@"theme"];
         [[NSUserDefaults standardUserDefaults] synchronize];

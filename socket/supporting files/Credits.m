@@ -7,63 +7,40 @@
 
 #import <Foundation/Foundation.h>
 #import "Credits.h"
+#define uistyle UIAlertActionStyleDefault handler:^(UIAlertAction *action)
 
 // news icons by Icons8 https://icons8.com/icons/ios-glyphs
-
 @interface Credits ()
 @end
-
 @implementation Credits
 
 
 #pragma mark - [*]--   Theme Stuff  --[*]
 
+-(void)set_theme:(UIColor*)color {
+    [[UIView appearance] setTintColor:color];
+    [[UILabel appearance] setTextColor:color];
+    [[UISwitch appearance] setTintColor:color];
+    [[UISwitch appearance] setOnTintColor:color];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+       @{NSForegroundColorAttributeName:color}];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSString *theme = [[NSUserDefaults standardUserDefaults] stringForKey:@"theme"];
-    NSLog(@"%@", theme);
-    if ([theme isEqual:@"aurora"]) {
-        [[UIView appearance] setTintColor:UIColorFromRGB(0x92B4A7)];
-        [[UILabel appearance] setTextColor:UIColorFromRGB(0x92B4A7)];
-        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x92B4A7)];
-        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x92B4A7)];
-        [self.navigationController.navigationBar setTitleTextAttributes:
-           @{NSForegroundColorAttributeName:UIColorFromRGB(0x92B4A7)}];
-    } else if ([theme isEqual:@"ocean"]) {
-        [[UIView appearance] setTintColor:UIColorFromRGB(0x0081A7)];
-        [[UILabel appearance] setTextColor:UIColorFromRGB(0x0081A7)];
-        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x0081A7)];
-        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x0081A7)];
-        [self.navigationController.navigationBar setTitleTextAttributes:
-           @{NSForegroundColorAttributeName:UIColorFromRGB(0x0081A7)}];
-    } else if ([theme isEqual:@"geometric"]) {
-        [[UIView appearance] setTintColor:UIColorFromRGB(0x71A0F6)];
-        [[UILabel appearance] setTextColor:UIColorFromRGB(0x71A0F6)];
-        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x71A0F6)];
-        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x71A0F6)];
-        [self.navigationController.navigationBar setTitleTextAttributes:
-           @{NSForegroundColorAttributeName:UIColorFromRGB(0x71A0F6)}];
-    } else if ([theme isEqual:@"pink"]) {
-        [[UIView appearance] setTintColor:UIColorFromRGB(0xB3679B)];
-        [[UILabel appearance] setTextColor:UIColorFromRGB(0xB3679B)];
-        [[UISwitch appearance] setTintColor:UIColorFromRGB(0xB3679B)];
-        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0xB3679B)];
-        [self.navigationController.navigationBar setTitleTextAttributes:
-           @{NSForegroundColorAttributeName:UIColorFromRGB(0xB3679B)}];
-    } else if ([theme isEqual:@"bands"]) {
-        [[UIView appearance] setTintColor:UIColorFromRGB(0x82A7A6)];
-        [[UILabel appearance] setTextColor:UIColorFromRGB(0x82A7A6)];
-        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x82A7A6)];
-        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x82A7A6)];
-        [self.navigationController.navigationBar setTitleTextAttributes:
-           @{NSForegroundColorAttributeName:UIColorFromRGB(0x82A7A6)}];
-    } else if ([theme isEqual:@"twist"]) {
-        [[UIView appearance] setTintColor:UIColorFromRGB(0x67597A)];
-        [[UILabel appearance] setTextColor:UIColorFromRGB(0x67597A)];
-        [[UISwitch appearance] setTintColor:UIColorFromRGB(0x67597A)];
-        [[UISwitch appearance] setOnTintColor:UIColorFromRGB(0x67597A)];
-        [self.navigationController.navigationBar setTitleTextAttributes:
-           @{NSForegroundColorAttributeName:UIColorFromRGB(0x67597A)}];
+    NSString *darkmode = [[NSUserDefaults standardUserDefaults] stringForKey:@"darkmode"];
+    
+    if ([theme isEqual:@"aura"]) [self set_theme:UIColorFromRGB(0x92B4A7)];
+    else if ([theme isEqual:@"ocean"]) [self set_theme:UIColorFromRGB(0x0081A7)];
+    else if ([theme isEqual:@"geometric"]) [self set_theme:UIColorFromRGB(0x71A0F6)];
+    else if ([theme isEqual:@"pink"]) [self set_theme:UIColorFromRGB(0xB3679B)];
+    else if ([theme isEqual:@"bands"]) [self set_theme:UIColorFromRGB(0x82A7A6)];
+    else if ([theme isEqual:@"twist"]) [self set_theme:UIColorFromRGB(0x67597A)];
+    
+    if ([darkmode isEqual:@"yes"]) {
+        self.tableView.backgroundColor = UIColorFromRGB(0x1C1C1E);
+        [[UITableViewCell appearance] setBackgroundColor:UIColorFromRGB(0x2C2C2E)];
     }
 }
 
@@ -71,7 +48,6 @@
 #pragma mark - [*]--   Credit Links  --[*]
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (indexPath.section == 0) {
         switch(indexPath.row) {
             case 0  :
