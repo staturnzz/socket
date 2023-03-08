@@ -1,6 +1,6 @@
 <img align="left" width="100" height="100" src="icon.png" alt="logo" style="float: left;"/>
 
-<h3 align="left" >Welcome to Socket, <br>iOS 10.3.x Jailbreak for 32bit devices<div align="right" style="float: top;"><b><a href="https://twitter.com/0x7FF7"><img height="18px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"></a><a href="https://github.com/staturnzz"> <img height="18px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"></div>
+<h3 align="left" >Welcome to Socket, <br>iOS 10.x Jailbreak for 32bit devices<div align="right" style="float: top;"><b><a href="https://twitter.com/0x7FF7"><img height="18px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"></a><a href="https://github.com/staturnzz"> <img height="18px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"></div>
 </br></h3> 
 
 
@@ -20,22 +20,30 @@ Before we start ensure you have one of the supported devices:
 3. Open the "Socket" app on your device and press "jailbreak"
 4. Enjoy!
 
+OR
+
+1. On your device go to [https://jailbreaks.app/legacy.html](https://jailbreaks.app/legacy.html)
+2. Select Socket and press "install" when prompted
+3. Go into settings and trust the application
+3. Open the "Socket" app on your device and press "jailbreak"
+4. Enjoy!
+
 ## Information:
 Jailbreak website: [https://socket-jb.app](https://socket-jb.app)<br>
 Socket Repo: [https://socket-jb.app/repo](https://socket-jb.app/repo)
 
-By default this jailbreak does NOT install Cydia, instead it uses [Zebra](https://github.com/zbrateam/Zebra), specifically my [fork](https://github.com/staturnzz/Zebra)
+*Socket supports all versions of iOS 10, but please note iOS 10.0.2-10.3.2 have not been tested.*
 
-Also note that this jailbreak does NOT destroy sandbox containers, you may have to resign some apps using the container-resign package, which can be found in the base Socket Repo in Zebra (you need to install this to use it). Then you can run the command as show below using a terminal or ssh.
-SSH
+By default this jailbreak does NOT install Cydia, instead it uses [Zebra](https://github.com/zbrateam/Zebra) (v1.1.28)
+
+Also note that this jailbreak does NOT destroy sandbox containers, you may have to resign some apps using the container-resign package, which can be found in the base Socket Repo in Zebra (you need to install this to use it). Then you can run the command as show below using a terminal or ssh. This only is for iOS 10.3 - 10.3.4.
+
 ```bash
 container-resign <path-to-binary>
 
-container-resign /Applications/Coolbooter.app/Coolbooter
+container-resign /Applications/coolbooter.app/coolbooter
 ```
 As with all jailbreaks, there is NO WARRANTY with this software, so use at your own risk. 
-
-If you are looking to build Socket from source please refer to [BUILDING.MD]()
 
 If you have an issue please report it via this repo's issues tab.
 ## Credits
