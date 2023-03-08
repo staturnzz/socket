@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Credits.h"
-#define uistyle UIAlertActionStyleDefault handler:^(UIAlertAction *action)
 
 // news icons by Icons8 https://icons8.com/icons/ios-glyphs
 @interface Credits ()

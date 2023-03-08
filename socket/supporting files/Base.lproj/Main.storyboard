@@ -672,7 +672,7 @@
                                         <rect key="frame" x="0.0" y="628" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DiX-I6-f2X" id="3Wf-wz-fPz">
-                                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="303.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Timhstar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="txS-9U-G1j">
@@ -692,7 +692,7 @@
                                         <rect key="frame" x="0.0" y="671.5" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B4U-hJ-L79" id="9os-Kg-JeP">
-                                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="303.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Zebra Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x6r-qg-th0">

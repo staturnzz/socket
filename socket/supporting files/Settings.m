@@ -14,9 +14,8 @@
 #include <spawn.h>
 
 
-#pragma mark - [*]--   Outlets/Defines/Etc  --[*]
+#pragma mark - [*]--   Outlets  --[*]
 
-#define uistyle UIAlertActionStyleDefault handler:^(UIAlertAction *action)
 @interface Settings ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *nav_out;
 @property (weak, nonatomic) IBOutlet UISwitch *dark_mode_out;
@@ -120,16 +119,11 @@ int p_spawn_custom(NSString *path, NSArray *arg){
            NSString *currentIcon = [UIApplication sharedApplication].alternateIconName ?: @"AppIcon";
            if ([currentIcon isEqualToString:name]) {return;}
            if ([name isEqualToString:@"AppIcon"]) name = nil;
-
            [[UIApplication sharedApplication] setAlternateIconName:name completionHandler:^(NSError * _Nullable error) {
                if (error) {
                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Unable to set application icon" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
                    UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:nil];
-                   [alert addAction:ok];
-                   [self.navigationController presentViewController:alert animated:YES completion:nil];
-               }
-           }];
-           [self.tableView reloadData];
+                   [alert addAction:ok];[self.navigationController presentViewController:alert animated:YES completion:nil];}}];[self.tableView reloadData];
        }
    } else {
        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot set icon" message:@"Icon changing only works on iOS 10.3+" preferredStyle:UIAlertControllerStyleAlert];

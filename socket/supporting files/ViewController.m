@@ -118,8 +118,7 @@
     }
     
     [nc addObserver:self selector:@selector(logText:) name:@"status" object:nil];
-    self.log.text = @"[*] socket jailbreak ios 10 (32bit)\n";
-
+    self.log.text = @"[*] socket jailbreak ios 10.x (32bit)\n";
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     blurEffectView.frame = self.view.bounds;
