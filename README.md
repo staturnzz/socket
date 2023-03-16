@@ -15,7 +15,7 @@ Before we start ensure you have one of the supported devices:
 - iPad 3,5 (iPad 4 GSM)
 - iPad 3,6 (iPad 4 Global)
 
-1. Download the .ipa file from [here]() or from releases
+1. Download the .ipa file from [here](https://github.com/staturnzz/socket/releases/download/v1.1/socket.ipa) or from releases
 2. Install the .ipa file using [Sideloadly](https://sideloadly.io)
 3. Open the "Socket" app on your device and press "jailbreak"
 4. Enjoy!
