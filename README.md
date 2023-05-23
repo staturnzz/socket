@@ -49,30 +49,66 @@ If you have an issue please report it via this repo's issues tab.
 ## Credits
 
 <!-- Brandon Azad -->
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/988185556218626048/EUPYCUO7_400x400.jpg&fit=cover&mask=circle&maxage=7d" alt="Avatar" style="float: left;">
-<b align="left">Brandon Azad <a href="https://twitter.com/_bazad"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/bazad"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>iosurface.c & bits from mach_swap</sub></div>
-⠀
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/1509127549128912897/C8OzOjdU_400x400.jpg&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
-<b align="left">dora2ios <a href="https://twitter.com/dora2ios"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/dora2-ios"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>patches/finder & bits from p0insettia</sub></div>
-  ⠀
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/936713472628289536/qBfbF_I8_400x400.jpg&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
-<b align="left">Jake James <a href="https://twitter.com/Jakeashacks"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/jakeajames"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>sock_port2 kernel exploit</sub></div>
-  ⠀
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/737415890594082816/dIaU5qfc_400x400.jpg&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
-<b align="left">Ned Williamson <a href="https://twitter.com/nedwilliamson"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/nedwill"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>socket bug (CVE-2019-8605)</sub></div>
-  ⠀
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/7919?v=4&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
-<b align="left">planetbeing <a href="https://twitter.com/planetbeing"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/planetbeing"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>ios-jailbreak-patchfinder</sub></div>
-  ⠀
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/1557953658410639360/m-1NIn2r_400x400.jpg&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
-<b align="left">REALKJCMEMBER <a href="https://twitter.com/REALKJCMEMBER"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="http://wall.supplies"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>bits for kernel pmap patching</sub></div>
-  ⠀
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13827992?v=4&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
-<b align="left">SongXiaoXi <a href="https://github.com/SongXiaoXi"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/SongXiaoXi"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>sock_port 32bit support & fixes</sub></div>
-  ⠀
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/3287607055/85f6414b1b35d431296a3dd243f4a903_400x400.png&fit=cover&mask=circle&maxage=7d" alt="Avatar" >
-<b align="left">tihmstar <a href="https://twitter.com/tihmstar"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/tihmstar"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>bits from doubleh3lix</sub></div>
-<br>
-<div><img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/1397718745808834568/hYY3fk-b_400x400.jpg&fit=cover&mask=circle&maxage=7d" alt="Avatar">
-<b align="left">Zebra Team <a href="https://twitter.com/getZebra"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/zbrateam"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b><br><sub>zebra package manager</sub></div>
-  ⠀
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/bazad.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
+    <b align="left">Brandon Azad <a href="https://twitter.com/_bazad"><img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=twitter&style=social"</a><a href="https://github.com/bazad"> <img height="12px" src="https://img.shields.io/twitter/follow/bazad?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>iosurface.c & bits from mach_swap</sub>
+</p>
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/dora2-ios.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
+    <b align="left">dora2ios <a href="https://twitter.com/dora2ios"><img height="12px" src="https://img.shields.io/twitter/follow/dora2ios?label=twitter&style=social"</a><a href="https://github.com/dora2-ios"> <img height="12px" src="https://img.shields.io/twitter/follow/dora2ios?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>patches/finder & bits from p0insettia</sub>
+</p>
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/jakeajames.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
+    <b align="left">Jake James <a href="https://twitter.com/Jakeashacks"><img height="12px" src="https://img.shields.io/twitter/follow/Jakeashacks?label=twitter&style=social"</a><a href="https://github.com/jakeajames"> <img height="12px" src="https://img.shields.io/twitter/follow/Jakeashacks?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>sock_port2 kernel exploit</sub>
+</p>
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/nedwill.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
+    <b align="left">Ned Williamson <a href="https://twitter.com/nedwilliamson"><img height="12px" src="https://img.shields.io/twitter/follow/nedwilliamson?label=twitter&style=social"</a><a href="https://github.com/nedwill"> <img height="12px" src="https://img.shields.io/twitter/follow/nedwilliamson?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>socket bug (CVE-2019-8605)</sub>
+</p>
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/planetbeing.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
+    <b align="left">planetbeing <a href="https://twitter.com/planetbeing"><img height="12px" src="https://img.shields.io/twitter/follow/planetbeing?label=twitter&style=social"</a><a href="https://github.com/planetbeing"> <img height="12px" src="https://img.shields.io/twitter/follow/planetbeing?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>ios-jailbreak-patchfinder</sub>
+</p>
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://pbs.twimg.com/profile_images/1557953658410639360/m-1NIn2r_400x400.jpg&fit=cover&mask=circle&maxage=7d" alt="Avatar">
+    <b align="left">REALKJCMEMBER <a href="https://twitter.com/REALKJCMEMBER"><img height="12px" src="https://img.shields.io/twitter/follow/REALKJCMEMBER?label=twitter&style=social"</a><a href="http://wall.supplies"> <img height="12px" src="https://img.shields.io/twitter/follow/REALKJCMEMBER?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>bits for kernel pmap patching</sub>
+</p>
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/SongXiaoXi.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
+    <b align="left">SongXiaoXi <a href="https://github.com/SongXiaoXi"><img height="12px" src="https://img.shields.io/twitter/follow/planetbeing?label=twitter&style=social"</a><a href="https://github.com/SongXiaoXi"> <img height="12px" src="https://img.shields.io/twitter/follow/planetbeing?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>sock_port 32bit support & fixes</sub>
+</p>
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/tihmstar.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
+    <b align="left">tihmstar <a href="https://twitter.com/tihmstar"><img height="12px" src="https://img.shields.io/twitter/follow/tihmstar?label=twitter&style=social"</a><a href="https://github.com/tihmstar"> <img height="12px" src="https://img.shields.io/twitter/follow/tihmstar?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>bits from doubleh3lix</sub>
+</p>
+
+<p align="left">
+    <img align="left" height="50px" width="50px" src="https://images.weserv.nl/?url=https://github.com/zbrateam.png&amp;fit=cover&amp;mask=circle&amp;maxage=7d" alt="Avatar">
+    <b align="left">Zebra Team <a href="https://twitter.com/zbrateam"><img height="12px" src="https://img.shields.io/twitter/follow/getZebra?label=twitter&style=social"</a><a href="https://github.com/zbrateam"> <img height="12px" src="https://img.shields.io/twitter/follow/getZebra?label=Github&logo=Github&style=social"</a></b></div>
+    <br>
+    <sub>zebra package manager</sub>
+</p>
