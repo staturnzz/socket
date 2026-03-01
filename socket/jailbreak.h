@@ -19,6 +19,7 @@
 #define JB_FLAG_TWEAKS      0x00000002
 #define JB_FLAG_RESPRING    0x00000004
 
+#define ZEBRA_SOURCES_PATH "/var/mobile/Library/Application Support/xyz.willy.Zebra"
 #define ZEBRA_SOURCES_FILE "/var/mobile/Library/Application Support/xyz.willy.Zebra/sources.list"
 #define APT_TELESPHOREO_REPO "deb http://apt.saurik.com/ ios/1349.70 main"
 #define APT_BIGBOSS_REPO "deb http://apt.thebigboss.org/repofiles/cydia/ stable main"

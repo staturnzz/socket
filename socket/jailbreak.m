@@ -80,6 +80,9 @@ int remount_rootfs(void) {
 }
 
 int update_zebra_sources(void) {
+    mkdir(ZEBRA_SOURCES_PATH, 0755);
+    chown(ZEBRA_SOURCES_PATH, 501, 501);
+
     unlink(ZEBRA_SOURCES_FILE);
     FILE *file = fopen(ZEBRA_SOURCES_FILE, "w+");
     if (file == NULL) return -1;
