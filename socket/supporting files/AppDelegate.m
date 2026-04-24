@@ -15,6 +15,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"tweaks": @"yes",}];
     [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"restrap"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     return YES;
