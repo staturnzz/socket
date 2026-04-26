@@ -20,9 +20,6 @@ void status(const char *str) {
 }
 
 void cleanup(void) {
-    [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"restrap"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
     flush_volume("/private/var");
     flush_volume("/");
     usleep(100000);

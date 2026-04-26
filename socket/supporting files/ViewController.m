@@ -110,6 +110,11 @@
         uint32_t flags = JB_FLAG_RESPRING;
         if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"tweaks"] isEqual:@"yes"]) flags |= JB_FLAG_TWEAKS;
         if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"restrap"] isEqual:@"yes"]) flags |= JB_FLAG_BOOTSTRAP;
+
+        // Reset restrap before UID escalation (NSUserDefaults breaks as root)
+        [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"restrap"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
         int ret = run_jailbreak(flags);
         
         dispatch_async(dispatch_get_main_queue(), ^{
