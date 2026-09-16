@@ -6,6 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreFoundation/CoreFoundation.h>
+
+extern CFDictionaryRef _CFCopySystemVersionDictionary(void);
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;

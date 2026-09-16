@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import <sys/sysctl.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"tweaks"];
     [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"restrap"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"untether_alert"];
+
+    char version_str[64] = {0};
+    
+    uint32_t version[3] = {0};
+    CFDictionaryRef dict = _CFCopySystemVersionDictionary();
+    CFStringRef cf_version = CFDictionaryGetValue(dict, CFSTR("ProductVersion"));
+    CFStringGetCString(cf_version, version_str, 32, kCFStringEncodingUTF8);
+    sscanf(version_str, "%d.%d.%d", &version[0], &version[1], &version[2]);
+
+    if (version[1] < 3) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"untether"];
+    } else {
+        char model[128] = {0};
+        size_t size = sizeof(model)-1;
+        sysctlbyname("hw.machine", model, &size, NULL, 0);
+
+        if (strstr(model, "iPad") != NULL && version[2] >= 2) {
+            [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"untether"];
+            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"untether_alert"];
+        } else {
+            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"untether"];
+            
+        }
+    }
+
     [[NSUserDefaults standardUserDefaults] synchronize];
     return YES;
 }

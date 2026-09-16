@@ -1,2 +1,5 @@
 .DS_Store
 /socket.xcodeproj/xcuserdata
+/socket.xcodeproj/project.xcworkspace/xcuserdata
+/build
+socket.ipa

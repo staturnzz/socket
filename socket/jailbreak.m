@@ -19,18 +19,8 @@ void status(const char *str) {
     usleep(10000);
 }
 
-void cleanup(void) {
-    [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"restrap"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    flush_volume("/private/var");
-    flush_volume("/");
-    usleep(100000);
-    sync();
-}
-
 int set_permissions(void) {
-    for (uint32_t i = 0; i < 5; i++) {
+    for (uint32_t i = 0; i < 20; i++) {
         uint32_t kern_cred = kread32(kinfo->kern_proc_addr + koffsetof(proc, ucred));
         uint32_t ucred_pa = kvtophys(kread32(kinfo->self_proc_addr + koffsetof(proc, ucred)));
         physwrite32(ucred_pa + 0xc, 0);
@@ -147,6 +137,59 @@ int fixup_package_managers(bool first_install) {
     return 0;
 }
 
+void verify_install(void) {
+    if (!file_exists("/Applications/Zebra.app/Zebra") && !file_exists("/Applications/Cydia.app/Cydia")) {
+        fixup_package_managers(true);
+    } else {
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/var/mobile/Library/Preferences/com.apple.springboard.plist"];
+        if (dict != NULL) {
+            NSNumber *value = [dict objectForKey:@"SBShowNonDefaultSystemApps"];
+            if (value == NULL || ![value isEqualToNumber:@(1)]) {
+                show_non_default_apps();
+                uicache();
+            }
+        }
+    }
+    
+    if (!file_exists("/bin/tar")) {
+        copy_bundle_file("tar", "/bin/tar", 0755, 0, 0);
+        int fd = open("/bin/tar", O_RDWR);
+        if (fd >= 0) {
+            uint32_t magic = FAT_CIGAM;
+            write(fd, &magic, sizeof(magic));
+            fsync(fd);
+            close(fd);
+        }
+    }
+    
+    if (!file_exists("/bin/launchctl")) {
+        copy_bundle_file("launchctl", "/bin/launchctl", 0755, 0, 0);
+        int fd = open("/bin/launchctl", O_RDWR);
+        if (fd >= 0) {
+            uint32_t magic = FAT_CIGAM;
+            write(fd, &magic, sizeof(magic));
+            fsync(fd);
+            close(fd);
+        }
+    }
+    
+    if (!file_exists("/.cydia_no_stash")) {
+        create_dotfile("/.cydia_no_stash");
+    }
+    
+    if (!file_exists("/.installed_socket")) {
+        create_dotfile("/.installed_socket");
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"no" forKey:@"restrap"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    flush_volume("/private/var");
+    flush_volume("/");
+    usleep(100000);
+    sync();
+}
+
 int install_bootstrap(void) {
     if (!file_exists("/bin/tar")) {
         copy_bundle_file("tar", "/bin/tar", 0755, 0, 0);
@@ -181,6 +224,11 @@ int install_bootstrap(void) {
     create_dotfile("/.cydia_no_stash");
     create_dotfile("/.installed_socket");
     return 0;
+}
+
+int install_untether(void) {
+    status("[*] installing untether...\n");
+    return install_deb(bundle_path("procyon.deb"));
 }
 
 void load_daemons(void) {
@@ -231,13 +279,19 @@ int run_jailbreak(uint32_t flags) {
         fixup_package_managers(false);
     }
     
+    if (access("/var/root/procyon", F_OK) != 0 && (flags & JB_FLAG_UNTETHER)) {
+        if (install_untether() != 0) {
+            status("[-] failed to install untether\n");
+            return -1;
+        }
+    }
     create_dotfile("/var/cache/.socket_1_2");
     if ((flags & JB_FLAG_TWEAKS)) {
         status("[*] loading daemons...\n");
         load_daemons();
     }
     
-    cleanup();
+    verify_install();
     print_log("[*] done!\n");
     if ((flags & JB_FLAG_RESPRING)) {
         usleep(500000);

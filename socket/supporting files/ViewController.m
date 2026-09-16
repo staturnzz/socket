@@ -110,6 +110,7 @@
         uint32_t flags = JB_FLAG_RESPRING;
         if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"tweaks"] isEqual:@"yes"]) flags |= JB_FLAG_TWEAKS;
         if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"restrap"] isEqual:@"yes"]) flags |= JB_FLAG_BOOTSTRAP;
+        if ([[[NSUserDefaults standardUserDefaults] stringForKey:@"untether"] isEqual:@"yes"]) flags |= JB_FLAG_UNTETHER;
         int ret = run_jailbreak(flags);
         
         dispatch_async(dispatch_get_main_queue(), ^{

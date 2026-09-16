@@ -21,6 +21,8 @@
 		2F8CBD022F52173700588E85 /* jailbreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8CBD012F52173700588E85 /* jailbreak.m */; };
 		2F9FD7D6299C5EAA009D1ED3 /* Credits.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7D5299C5EAA009D1ED3 /* Credits.m */; };
 		2F9FD7D9299D6ADD009D1ED3 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7D8299D6ADD009D1ED3 /* Settings.m */; };
+		2FC02087305B612E00EDA0E4 /* procyon.deb in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC02086305B612E00EDA0E4 /* procyon.deb */; };
+		2FC02088305B613700EDA0E4 /* procyon.deb in Resources */ = {isa = PBXBuildFile; fileRef = 2FC02086305B612E00EDA0E4 /* procyon.deb */; };
 		2FC9C3CB298DFB720078D39B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC9C3CA298DFB720078D39B /* AppDelegate.m */; };
 		2FC9C3D1298DFB720078D39B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC9C3D0298DFB720078D39B /* ViewController.m */; };
 		2FC9C3D4298DFB720078D39B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC9C3D2298DFB720078D39B /* Main.storyboard */; };
@@ -53,6 +55,7 @@
 		2F9FD7D7299C5EF5009D1ED3 /* Credits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credits.h; sourceTree = "<group>"; };
 		2F9FD7D8299D6ADD009D1ED3 /* Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		2F9FD7DA299D6AE1009D1ED3 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		2FC02086305B612E00EDA0E4 /* procyon.deb */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = procyon.deb; sourceTree = "<group>"; };
 		2FC9C3C6298DFB720078D39B /* socket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC9C3C9298DFB720078D39B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FC9C3CA298DFB720078D39B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC02087305B612E00EDA0E4 /* procyon.deb in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +139,7 @@
 				2FC9C40D298DFF570078D39B /* launchctl */,
 				2FC9C40F298DFF570078D39B /* tar */,
 				2F2334F42F51F13600891730 /* zebra.deb */,
+				2FC02086305B612E00EDA0E4 /* procyon.deb */,
 				2F205FBE29901A43009874C8 /* supporting files */,
 				2F205FB82990194B009874C8 /* exploit */,
 				2FC9C3DA298DFB730078D39B /* Info.plist */,
@@ -215,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC02088305B613700EDA0E4 /* procyon.deb in Resources */,
 				2F88BB7F2F53857E0051CED5 /* bootstrap.tar in Resources */,
 				2F88BB7D2F5384BE0051CED5 /* tar in Resources */,
 				2F2334F62F51F13C00891730 /* zebra.deb in Resources */,
@@ -398,10 +404,10 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.2;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 98BG3C5BP9;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = socket/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = socket;
@@ -419,7 +425,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/socket",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.staturnz.socket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,10 +444,10 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2.2;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 98BG3C5BP9;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = socket/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = socket;
@@ -459,7 +465,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/socket",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.staturnz.socket;
 				PRODUCT_NAME = "$(TARGET_NAME)";

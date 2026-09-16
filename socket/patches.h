@@ -14,7 +14,7 @@
 #include <sys/stat.h>
 #include <sys/file.h>
 
-#define patch_mpo(name) {*(volatile uint32_t *)(mpo_mapped + mpo_offset + offsetof(mac_policy_ops_t, name)) = 0;}
+#define patch_mpo(name) {kwrite32(mpo_base + offsetof(mac_policy_ops_t, name), 0);}
 
 typedef struct __attribute__((packed)) {
     uint32_t mpo_audit_check_postselect;

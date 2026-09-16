@@ -41,36 +41,6 @@ int apply_patches(void) {
     patches = calloc(1, sizeof(patches_t));
     physread_buf(0x80001000, kernel_data, kernel_data_size);
     
-    {
-#if 0
-        printf("testing patchfinder...\n");
-        printf("proc_enforce: 0x%x\n", find_patch_offset(find_proc_enforce));
-        printf("ret1_gadget: 0x%x\n", find_patch_offset(find_mov_r0_1_bx_lr));
-        printf("pid_check: 0x%x\n", find_patch_offset(find_pid_check));
-        printf("i_can_has_debugger_1: 0x%x\n", find_patch_offset(find_i_can_has_debugger_1));
-        printf("i_can_has_debugger_2: 0x%x\n", find_patch_offset(find_i_can_has_debugger_2));
-        printf("mount_patch: 0x%x\n", find_patch_offset(find_mount_patch));
-        printf("vm_map_enter: 0x%x\n", find_patch_offset(find_vm_map_enter));
-        printf("vm_map_protect: 0x%x\n", find_patch_offset(find_vm_map_protect));
-        printf("vm_fault_enter: 0x%x\n", find_patch_offset(find_vm_fault_enter));
-        printf("csops_patch: 0x%x\n", find_patch_offset(find_csops));
-        printf("amfi_cred_label_update_execve: 0x%x\n", find_patch_offset(find_amfi_cred_label_update_execve));
-        printf("amfi_vnode_check_signature: 0x%x\n", find_patch_offset(find_amfi_vnode_check_signature));
-        printf("amfi_loadEntitlementsFromVnode: 0x%x\n", find_patch_offset(find_amfi_loadEntitlementsFromVnode));
-        printf("amfi_vnode_check_exec: 0x%x\n", find_patch_offset(find_amfi_vnode_check_exec));
-        printf("mapForIO: 0x%x\n", find_patch_offset(find_mapForIO));
-        printf("sbcall_debugger: 0x%x\n", find_patch_offset(find_sandbox_call_i_can_has_debugger));
-        printf("vfsContextCurrent: 0x%x\n", find_patch_offset(find_vfs_context_current));
-        printf("vnodeGetattr: 0x%x\n", find_patch_offset(find_vnode_getattr));
-        printf("kernelConfig_stub: 0x%x\n", find_patch_offset(find_lwvm_i_can_has_krnl_conf_stub));
-        printf("sb_ops: 0x%x\n", find_patch_offset(find_sbops));
-        printf("sb_disable: 0x%x\n", find_patch_offset(find_sb_disable));
-        printf("cs_system_require_lv: 0x%x\n", find_patch_offset(find_cs_system_require_lv));
-        printf("amfi_cs_flags_patch: 0x%x\n", find_patch_offset(find_amfi_cs_flags_patch));
-        exit(0);
-#endif
-    }
-    
     if ((patches->proc_enforce = find_patch_offset(find_proc_enforce)) == 0) return 1;
     if (physread32(patches->proc_enforce) == 0) return 0;
     
@@ -103,43 +73,7 @@ int apply_patches(void) {
     if ((patches->amfi_cs_flags_patch = find_patch_offset(find_amfi_cs_flags_patch)) == 0) return 24;
     patches->csops_patch_size = ((physread16(patches->csops_patch + 0x2) & 0xF8FF) == 0x2000) ? 0x4 : 0x6;
     
-    
-    printf("-- proc_enforce: 0x%x\n", patches->proc_enforce);
-    printf("-- locked_task: 0x%x\n", patches->locked_task);
-    printf("-- ret1_gadget: 0x%x\n", patches->ret1_gadget);
-    printf("-- i_can_has_debugger_1: 0x%x\n", patches->i_can_has_debugger_1);
-    printf("-- i_can_has_debugger_2: 0x%x\n", patches->i_can_has_debugger_2);
-    printf("-- mount_patch: 0x%x\n", patches->mount_patch);
-    printf("-- vm_map_enter: 0x%x\n", patches->vm_map_enter);
-    printf("-- vm_map_protect: 0x%x\n", patches->vm_map_protect);
-    printf("-- vm_fault_enter: 0x%x\n", patches->vm_fault_enter);
-    printf("-- csops_patch: 0x%x\n", patches->csops_patch);
-    printf("-- amfi_cred_label_update_execve: 0x%x\n", patches->amfi_cred_label_update_execve);
-    printf("-- amfi_vnode_check_signature: 0x%x\n", patches->amfi_vnode_check_signature);
-    printf("-- amfi_loadEntitlementsFromVnode: 0x%x\n", patches->amfi_loadEntitlementsFromVnode);
-    printf("-- amfi_vnode_check_exec: 0x%x\n", patches->amfi_vnode_check_exec);
-    printf("-- mapForIO: 0x%x\n", patches->mapForIO);
-    printf("-- sbcall_debugger: 0x%x\n", patches->sbcall_debugger);
-    printf("-- vfsContextCurrent: 0x%x\n", patches->vfsContextCurrent);
-    printf("-- vnodeGetattr: 0x%x\n", patches->vnodeGetattr);
-    printf("-- kernelConfig_stub: 0x%x\n", patches->kernelConfig_stub);
-    printf("-- sb_ops: 0x%x\n", patches->sb_ops);
-    printf("-- sb_disable: 0x%x\n", patches->sb_disable);
-    printf("-- cs_system_require_lv: 0x%x\n", patches->cs_system_require_lv);
-    printf("-- amfi_cs_flags_patch: 0x%x\n", patches->amfi_cs_flags_patch);
-    printf("-- sb_disable_size: 0x%x\n", patches->sb_disable_size);
-    printf("-- csops_patch_size: 0x%x\n", patches->csops_patch_size);
-
-    /*
-        issues:
-            - csops find wrong addr?
-     
-     
-     */
-
     physwrite32(patches->proc_enforce, 0);
-    printf("proc_enforce: patched\n");
-    
     physwrite32(patches->i_can_has_debugger_1, 1);
     physwrite32(patches->i_can_has_debugger_2, 1);
     physwrite32(patches->vm_fault_enter, 0x0b01f04f);
@@ -200,10 +134,9 @@ int apply_patches(void) {
     *(uint32_t *)(shc_data+0x168) = mpo_execve_ptr;
 
     physwrite_buf(shc_addr - kinfo->kernel_slide, shc_data, mpo_execve_size);
-    uint8_t *mpo_mapped = map_data(patches->sb_ops & ~0xfff, 0x4000, VM_PROT_READ|VM_PROT_WRITE);
-    uint32_t mpo_offset = (patches->sb_ops & 0xfff);
-    *(volatile uint32_t *)(mpo_mapped + mpo_offset + offsetof(mac_policy_ops_t, mpo_cred_label_update_execve)) = (shc_addr | 0x1);
-
+    uint32_t mpo_base = patches->sb_ops + kinfo->kernel_slide;
+    kwrite32(mpo_base + offsetof(mac_policy_ops_t, mpo_cred_label_update_execve), shc_addr | 0x1);
+    
     patch_mpo(mpo_mount_check_mount);
     patch_mpo(mpo_mount_check_remount);
     patch_mpo(mpo_mount_check_umount);
@@ -241,7 +174,6 @@ int apply_patches(void) {
     patch_mpo(mpo_proc_check_fork);
     patch_mpo(mpo_proc_check_get_cs_info);
     patch_mpo(mpo_proc_check_set_cs_info);
-    printf("mpo: patched\n");
 
     usleep(100000);
     for (uint32_t i = 0; i < 1000; i++) {
@@ -249,7 +181,6 @@ int apply_patches(void) {
         usleep(1);
     }
     
-   // free(shc_data);
     free(kernel_data);
     kernel_data = NULL;
     kernel_data_size = 0;
